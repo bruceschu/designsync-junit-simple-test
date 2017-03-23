@@ -33,6 +33,9 @@ public class HelloAppTest {
 	    
 	    final String pageAsText = page.asText();
 	    assertTrue(pageAsText.contains("3DEXPERIENCE R2018x"));
+	    
+	    final HtmlAnchor anchor = page.getAnchorByText("DesignSync Menu");
+	    assertNotNull("DS Menu entry", anchor);
 	}
     }
 
