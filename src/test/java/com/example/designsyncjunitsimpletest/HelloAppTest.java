@@ -1,23 +1,17 @@
-package com.example.javamavenjunithelloworld;
+package com.example.designsyncjunitsimpletest;
 
-import java.util.ArrayList;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
 import java.util.List;
 
 import org.junit.Test;
-import static org.junit.Assert.*;
-import org.junit.runner.RunWith;
-
 //import org.powermock.api.mockito.PowerMockito;
 //import org.powermock.core.classloader.annotations.PrepareForTest;
 //import org.powermock.modules.junit4.PowerMockRunner;
-
-import com.gargoylesoftware.htmlunit.WebClient;
-import com.gargoylesoftware.htmlunit.html.HtmlAnchor;
-import com.gargoylesoftware.htmlunit.html.HtmlForm;
-import com.gargoylesoftware.htmlunit.html.HtmlPage;
-import com.gargoylesoftware.htmlunit.html.HtmlSubmitInput;
-import com.gargoylesoftware.htmlunit.html.HtmlTextInput;
 import com.gargoylesoftware.htmlunit.html.FrameWindow;
+import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import com.gargoylesoftware.htmlunit.WebClient;
 
 //import static org.mockito.Mockito.*;
 //import static org.powermock.api.mockito.PowerMockito.whenNew;
