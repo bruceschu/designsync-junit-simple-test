@@ -1,5 +1,8 @@
 package com.example.javamavenjunithelloworld;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.runner.RunWith;
@@ -14,6 +17,7 @@ import com.gargoylesoftware.htmlunit.html.HtmlForm;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import com.gargoylesoftware.htmlunit.html.HtmlSubmitInput;
 import com.gargoylesoftware.htmlunit.html.HtmlTextInput;
+import com.gargoylesoftware.htmlunit.html.FrameWindow;
 
 //import static org.mockito.Mockito.*;
 //import static org.powermock.api.mockito.PowerMockito.whenNew;
@@ -34,8 +38,9 @@ public class HelloAppTest {
 	    final String pageAsText = page.asText();
 	    assertTrue(pageAsText.contains("3DEXPERIENCE R2018x"));
 	    
-	    final HtmlAnchor anchor = page.getAnchorByText("DesignSync Menu");
-	    assertNotNull("DS Menu entry", anchor);
+	    // start snooping at the various iframes on the landing page
+        final List<FrameWindow> window = page.getFrames();
+        assertNotNull("Could not get iframes", window);
 	}
     }
 
