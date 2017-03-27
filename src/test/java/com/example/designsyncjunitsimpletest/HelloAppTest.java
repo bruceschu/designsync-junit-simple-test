@@ -23,7 +23,7 @@ public class HelloAppTest {
     @Test
     public void homePage() throws Exception {
 	try (final WebClient webClient = new WebClient()) {
-	    final HtmlPage page = webClient.getPage("http://192.168.0.7:30080/scripts/isynch.dll");
+	    final HtmlPage page = webClient.getPage("http://" + System.getProperty("testServer") + "/scripts/isynch.dll");
 	    assertTrue(page.getTitleText().contains("ENOVIA Synchronicity 3DEXPERIENCE"));
 	    
 	    final String pageAsXml = page.asXml();
