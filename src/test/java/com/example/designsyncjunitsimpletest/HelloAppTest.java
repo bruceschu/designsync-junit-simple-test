@@ -6,6 +6,8 @@ import static org.junit.Assert.assertTrue;
 import java.util.List;
 
 import org.junit.Test;
+import org.junit.FixMethodOrder;
+import org.junit.runners.MethodSorters;
 //import org.powermock.api.mockito.PowerMockito;
 //import org.powermock.core.classloader.annotations.PrepareForTest;
 //import org.powermock.modules.junit4.PowerMockRunner;
@@ -18,26 +20,49 @@ import com.gargoylesoftware.htmlunit.WebClient;
 
 
 // This will be the main starting class.
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class HelloAppTest {
 
     @Test
-    public void homePage() throws Exception {
+    public void T000_homePage() throws Exception {
 	try (final WebClient webClient = new WebClient()) {
 	    final HtmlPage page = webClient.getPage("http://" + System.getProperty("testServer") + "/scripts/isynch.dll");
 	    assertTrue(page.getTitleText().contains("ENOVIA Synchronicity 3DEXPERIENCE"));
 	    
+	}
+    }
+    
+    @Test
+    public void T001_homePage() throws Exception {
+	try (final WebClient webClient = new WebClient()) {
+	    final HtmlPage page = webClient.getPage("http://" + System.getProperty("testServer") + "/scripts/isynch.dll");
+	    
 	    final String pageAsXml = page.asXml();
 	    assertTrue(pageAsXml.contains("<body class=\"SyncNotesTop\">"));
+    }}
+
+    @Test
+    public void T002_homePage() throws Exception {
+	try (final WebClient webClient = new WebClient()) {
+	    final HtmlPage page = webClient.getPage("http://" + System.getProperty("testServer") + "/scripts/isynch.dll");
 	    
 	    final String pageAsText = page.asText();
 	    assertTrue(pageAsText.contains("3DEXPERIENCE R2018x"));
 	    
-	    // start snooping at the various iframes on the landing page
+	    }}
+
+    @Test
+    public void T003_homePage() throws Exception {
+	try (final WebClient webClient = new WebClient()) {
+	    final HtmlPage page = webClient.getPage("http://" + System.getProperty("testServer") + "/scripts/isynch.dll");
+	    
+ 	    // start snooping at the various iframes on the landing page
         final List<FrameWindow> window = page.getFrames();
         assertNotNull("Could not get iframes", window);
-	}
-    }
+	   }}
 
+	    	    
+	    
 }
 
 
