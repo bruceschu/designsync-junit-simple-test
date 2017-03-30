@@ -27,7 +27,7 @@ public class HelloAppTest {
     public void T000_homePage() throws Exception {
 	try (final WebClient webClient = new WebClient()) {
 	    final HtmlPage page = webClient.getPage("http://" + System.getProperty("testServer") + "/scripts/isynch.dll");
-	    assertTrue(page.getTitleText().contains("ENOVIA Synchronicity 3DEXPERIENCE"));
+	    assertTrue("testing title text", page.getTitleText().contains("ENOVIA Synchronicity 3DEXPERIENCE"));
 	    
 	}
     }
@@ -38,7 +38,7 @@ public class HelloAppTest {
 	    final HtmlPage page = webClient.getPage("http://" + System.getProperty("testServer") + "/scripts/isynch.dll");
 	    
 	    final String pageAsXml = page.asXml();
-	    assertTrue(pageAsXml.contains("<body class=\"SyncNotesTop\">"));
+	    assertTrue("testing SyncNotesTop xml", pageAsXml.contains("<body class=\"SyncNotesTop\">"));
     }}
 
     @Test
@@ -47,7 +47,7 @@ public class HelloAppTest {
 	    final HtmlPage page = webClient.getPage("http://" + System.getProperty("testServer") + "/scripts/isynch.dll");
 	    
 	    final String pageAsText = page.asText();
-	    assertTrue(pageAsText.contains("3DEXPERIENCE foo R2018x"));
+	    assertTrue("testing banner text", pageAsText.contains("3DEXPERIENCE foo R2018x"));
 	    
 	    }}
 
@@ -58,7 +58,7 @@ public class HelloAppTest {
 	    
  	    // start snooping at the various iframes on the landing page
         final List<FrameWindow> window = page.getFrames();
-        assertNotNull("Could not get iframes", window);
+        assertNotNull("could not get iframes", window);
 	   }}
 
 	    	    
