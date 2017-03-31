@@ -56,6 +56,7 @@ public class HelloAppTest {
  	    // start snooping at the various iframes on the landing page
         final List<FrameWindow> window = page.getFrames();
         assertNotNull("could not get iframes", window);
+        System.out.println("Number of iframes found: " + window.size());
 	}
 	}
     
