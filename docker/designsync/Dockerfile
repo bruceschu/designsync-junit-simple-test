@@ -6,8 +6,7 @@ FROM centos:centos7
 MAINTAINER Bruce Schurmann <Bruce.Schurmann@3ds.com>
 
 # Add the EPEL repository to allow installing other items below
-RUN yum -y install wget
-RUN wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+RUN curl -O https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 RUN rpm -ivh epel-release-latest-7.noarch.rpm
 
 # Install all the bits and pieces that are required for the installation, configuration
