@@ -43,7 +43,7 @@ public class HelloAppTest {
 	    final HtmlPage page = webClient.getPage("http://" + System.getProperty("testServer") + "/scripts/isynch.dll");
 	    
 	    final String pageAsText = page.asText();
-	    assertTrue("testing banner text", pageAsText.contains("3DEXPERIENCE doo R2018x"));
+	    assertTrue("testing banner text", pageAsText.contains("3DEXPERIENCE R2018x"));
 	    
 	}
 	}
